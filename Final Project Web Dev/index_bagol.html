@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="bagol.css">
+    <script src="bagol.js" defer></script>
+    <title>Ian Portfolio</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Ian <span>Bagol</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#home">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#about">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#projects">Projects</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="main-container">
+            <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+                <img src="image.jpg" alt="Ian Bagol">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hello I'm <span>Ian</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a <span class="typewriter-text"></span></div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">A student of BISU Balilihan, currently pursuing a Bachelor of Science in Information Technology. 
+                    With a growing passion for web development and design, I'm excited about learning new coding skills and working on real-world projects that blend creativity with functionality. 
+                    My journey in web development is just beginning, and I'm always eager to dive into new technologies and challenges.</p>
+                <div class="social-links">
+                    <!-- Replace # with actual URLs -->
+                    <a href="https://github.com/your-github-cyberfinsc" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://facebook.com/your-facebook-Ian" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="section-container" data-aos="fade-up" data-aos-duration="1500">
+            <h1>About Me</h1>
+            <p>Hi! I'm Ian, a student at BISU Balilihan studying Information Technology. I’m passionate about web development and design, and I’m always learning new things to improve my skills.
+               I enjoy building websites that are both functional and easy to use. I'm focused on creating clean code and designing user-friendly experiences. My journey in web development is just beginning, and I’m excited to take on new challenges and grow as a developer.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-container" data-aos="fade-up" data-aos-duration="1500">
+            <h1>PROJECTS</h1>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Project One" class="project-image" onclick="showImage(this)">
+                    <h3>Project One</h3>
+                    <p>Details about your first project. Add relevant description here.</p>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project Two" class="project-image" onclick="showImage(this)">
+                    <h3>Project Two</h3>
+                    <p>Details about your second project. Add relevant description here.</p>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Project Three" class="project-image" onclick="showImage(this)">
+                    <h3>Project Three</h3>
+                    <p>Details about your third project. Add relevant description here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" onclick="hideImage()">
+        <img id="modalImage" class="modal-content">
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container" data-aos="fade-up" data-aos-duration="1500">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name:" required>
+                <input type="email" placeholder="Your Email:" required>
+                <textarea placeholder="Your Message:" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+
+        // Show and hide image for the modal
+        function showImage(img) {
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        }
+
+        function hideImage() {
+            var modal = document.getElementById('imageModal');
+            modal.style.display = "none";
+        }
+
+        // Handle mobile navigation dropdown
+        function hamburg() {
+            document.querySelector('.dropdown').style.transform = "translateY(0)";
+        }
+
+        function cancel() {
+            document.querySelector('.dropdown').style.transform = "translateY(-500px)";
+        }
+    </script>
+</body>
+</html>
