@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="bagol.css">
+    </script>
+        
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("KVTCCvuCJc4UO3T5O");
+        })();
+    </script>
+    <script src="bagol.js" defer></script>
+    <title>Ian Portfolio</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Ian <span>Bagol</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#home">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#about">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#projects">Projects</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#contact">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="main-container">
+            <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+                <img src="image.jpg" alt="Ian Bagol">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hello I'm <span>Ian</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a <span class="typewriter-text"></span></div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">A student of BISU Balilihan, currently pursuing a Bachelor of Science in Information Technology. 
+                    With a growing passion for web development and design, I'm excited about learning new coding skills and working on real-world projects that blend creativity with functionality. 
+                    My journey in web development is just beginning, and I'm always eager to dive into new technologies and challenges.</p>
+                <div class="social-links">
+                    <a href="https://github.com/cyberfinsc/Ian-Bagol" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/ian.bagol.90" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="section-container" data-aos="fade-up" data-aos-duration="1500">
+            <h1>About Me</h1>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi! I'm Ian, a student at BISU Balilihan studying Information Technology. I’m passionate about web development and design, and I’m always learning new things to improve my skills.
+                       I enjoy building websites that are both functional and easy to use. I'm focused on creating clean code and designing user-friendly experiences. My journey in web development is just beginning, and I’m excited to take on new challenges and grow as a developer.</p>
+                </div>
+                <div class="about-image">
+                    <img src="image1.jpg" alt="About Me Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-container" data-aos="fade-up" data-aos-duration="1500">
+            <h1>PROJECTS</h1>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Project One" class="project-image" onclick="showImage(this)">
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project Two" class="project-image" onclick="showImage(this)">
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Project Three" class="project-image" onclick="showImage(this)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container" data-aos="fade-up" data-aos-duration="1500">
+            <h2>Contact Me</h2>
+            <p>You can reach me via email or connect with me on social media platforms listed below. I'm always open to collaborations and inquiries!</p>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Name:" required>
+                <input type="email" id="email" placeholder="Email Address:" required>
+                <textarea id="message" placeholder="Your Message:" required></textarea>
+                <button type="submit" onclick="sendMail()">Send Message</button>
+            </form>
+            <div id="notification" class="notification">
+                <span id="notification-message"></span>
+                <button id="notification-close" onclick="closeNotification()" style="display: none;">✖</button>
+            </div>
+            
+              
+            <div class="social-links" style="margin-top: 20px;">
+                <p>Email: <a href="mailto:ianbagol13@gmail.com">ianbagol13@gmail.com</a></p>
+                <a href="https://github.com/cyberfinsc/Ian-Bagol" target="_blank">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://www.facebook.com/ian.bagol.90" target="_blank" style="margin-left: 15px;">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" onclick="hideImage()">
+        <img id="modalImage" class="modal-content">
+    </div>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+    </script>
+    
+    <!-- EmailJS Script -->
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "KVTCCvuCJc4UO3T5O",
+  });
+})();
+</script>
+    </script>
+</body>
+</html>
